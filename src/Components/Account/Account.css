@@ -1,0 +1,590 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    font-style: italic;
+    color: snow;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #1c8adb;
+    z-index: 9999;
+    font-family: 'Billabong', 'Arial', sans-serif;
+    letter-spacing: 7px;
+}
+
+.title {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-style: normal;
+    font-style: italic;
+}
+
+.exitAccount,
+.new,
+.setting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 30px;
+    background-color: #1c8adb;
+    color: #fff;
+    box-shadow: 0 5px 5px -5px black;
+}
+
+.setting {
+    margin-right: 10px;
+}
+
+
+.empty-classifieds {
+    margin: 150px auto;
+    font-style: italic;
+    color: grey;
+    letter-spacing: 5px;
+}
+
+.my_classifieds_list {
+    margin: 0;
+    margin-top: 120px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+
+.my_classified_item {
+    position: relative;
+    width: 48%;
+    padding: 0;
+    margin: 10px 7px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.my_classified_main {
+    display: flex;
+}
+
+.my_img-wrapper {
+    width: 40%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.my_img-wrapper img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.my_img-wrapper div {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.my_img-wrapper:hover div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.my_img-wrapper span {
+    color: snow;
+    font-size: 50px;
+}
+
+.my_classified_info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.my_classified_info div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.my_cls_header {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.my_classified_title {
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 22px;
+}
+
+.my_classified_price {
+    width: 20%;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+
+.my_classified-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.my_classified-info p {
+    margin: 10px;
+    margin-left: 0;
+    padding: 8px;
+    color: snow;
+    background: #1c8adb;
+    text-shadow: 0 0 2px black;
+    border-radius: 5px;
+    font-size: 12px;
+    box-shadow: 0 5px 5px -2px #ccc;
+    background: #1c8adb;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.my_time {
+    font-size: 12px;
+    margin: 0;
+    color: #aaa;
+}
+
+.my_classified_addres {
+    margin: 0;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.editModal {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+}
+
+.none {
+    display: none;
+}
+
+.my_commentBtn,
+.edit,
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;    
+    color: #1c8adb;
+}
+
+.my_commentBtn {
+    margin-left: auto;
+}
+
+.edit {
+    color: springgreen;
+}
+
+.delete {
+    color: lightcoral;
+}
+
+.my_commentBtn:active,
+.edit:active,
+.delete:active {
+    color: red;
+}
+
+
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+
+.images_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.images_modal ul {
+    position: relative;
+    width: 40%;
+    padding: 0 !important;
+    margin: 100px auto;
+    list-style-type: none;
+}
+
+.images_modal > div {
+    width: 500px;
+    height: 400px;
+}
+
+.images_modal img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.images_modal .image_btn {
+    box-shadow: 0 0 10px black;
+    font-family: "Prox";
+}
+
+
+/* ////////////// */
+/* MODAL */
+/* ////////////// */
+
+.my_modal_content {
+    position: relative;
+    width: 50%;
+    min-height: 95vh;
+    margin: 10px auto 0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow:  0 0 10px black;
+    display: flex;
+}
+
+.my_content--wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit_img {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.edit_img .fileUpload {
+    width: 30%;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 60px;
+    background-color: #eee;
+}
+
+.edit_img input {
+    display: none;
+}
+
+.edit_classified_info--modal {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit_cls_header--modal {
+    width: 100%;
+    display: flex;
+}
+
+.edit_classified_price {
+    width: 40%;
+    margin: 0 5px;
+}
+
+.edit_selects__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.edit_selects__list li {
+    width: 49%;
+    margin: 5px 0;
+    list-style-type: none;
+}
+
+.edit_selects__list 
+select,
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.edit_classified_body {
+    width: 100%;
+    min-height: 220px;
+    resize: none;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.edit_classified_footer {
+    margin-top: auto;
+    display: flex;
+}
+
+.edit_classified_footer button {
+    padding: 10px;
+    border: none;
+    color: snow;
+    text-shadow: 0 0 2px black;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    font-family: "Prox";
+}
+
+.edit_ok {
+    flex-grow: 1;
+    background: linear-gradient(to right, skyblue, #1c8adb, skyblue);
+    margin-right: 10px;
+}
+
+.edit_modal-cancel {
+    background-color: #f8453f;
+}
+
+/* ================================================== */
+/* ================================================== */
+/* ================================================== */
+/* ================================================== */
+
+.openComments {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+}
+
+.openComments > div {
+    position: relative;
+    width: 50%;
+    height: 95vh;
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.my_comments_list {
+    height: 85vh;
+    overflow: auto;
+    padding: 0 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+.no_comment {
+    margin-top: 100px;
+    letter-spacing: 10px;
+    font-style: italic;
+    color: #aaa;
+    font-weight: bold;
+    text-align: center;
+    list-style-type: none;
+}
+
+.my_comments {
+    padding: 5px;
+    margin: 0 0 15px;
+    border-radius: 5px;
+    list-style-type: none;
+    background-color: #fff;
+    background: #fff;
+    border: 1px solid #aaa;
+    display: flex;
+    align-items: flex-start;
+}
+
+.my_comments:last-child {
+    margin-bottom: 5px;
+}
+
+.my_comments p {
+    padding: 0;
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.my_comments .user_username {
+    color: #f8453f;
+    font-weight: bold;
+    margin-bottom: 2px !important;
+}
+
+.comments_close {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    border: none;
+    color: snow;
+    text-shadow: 0 0 2px black;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f8453f;
+    outline: none;
+    font-family: "Prox";
+}
+
+@media (max-width: 1200px) {
+    .my_classifieds_list {
+        margin-top: 90px;
+        padding-bottom: 80px;
+    }
+    .my_classified_item {
+        width: 45%;
+        margin: 20px auto 0;
+    }
+    .my_classified_main {
+        display: block;
+    }
+    .my_img-wrapper {
+        width: 100%;
+    }
+    .my_classified_info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .openComments > div {
+        width: 60%;
+    }
+    .images_modal ul {
+        width: 50%;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        padding: 20px 10px;
+    }
+    .title {
+        text-align: left;
+        font-size: 25px;
+    }
+    .logout {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .exitAccount,
+    .new {
+        display: none;
+    }
+
+    .images_modal ul {
+        width: 60%;
+    }
+
+    .images_modal img {
+        height: 300px;
+    }
+    
+}
+
+@media (max-width: 800px) {
+    .my_classified_title {
+        font-size: 25px;
+    }
+    .my_classified-info {
+        margin: 10px 0;
+    }
+    .my_classified-info p {
+        margin: 5px;
+        padding: 5px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .my_classified_item {
+        width: 80%;
+    }
+    .openComments > div {
+        width: 95%;
+    }
+    
+    .images_modal ul {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .images_modal > div {
+        width: 40% !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .my_classified_item {
+        width: 100%;
+    }
+    .my_classified_title {
+        font-size: 20px;
+    }
+    .my_classified_price {
+        font-size: 20px;
+    }
+}

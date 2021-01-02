@@ -1,0 +1,24 @@
+.header_component {
+    position: fixed;
+    top: 0;
+    left: 0;    
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    font-style: italic;
+    color: snow;
+    background: #1c8adb;
+    z-index: 2;
+}
+
+.header_component .title {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Billabong', 'Arial', sans-serif;
+    letter-spacing: 10px;
+}
