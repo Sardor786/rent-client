@@ -9,15 +9,6 @@ html {
 }
 
 @font-face {
-	font-family: "Billabong";
-	src: url("./fonts/Billabong.woff2") format("woff2"),
-		url("./fonts/Billabong.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
 	font-family: "Prox";
 	src: url("./fonts/Prox-Italic.woff2") format("woff2"),
 		url("./fonts/Prox-Italic.woff") format("woff");
