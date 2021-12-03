@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ADDRESS } from "../Context";
-import "./Menu.css";
 import { Link } from "react-router-dom";
 import { FaHome, FaUserCircle } from "react-icons/fa";
 import { FiPlusCircle } from "react-icons/fi";

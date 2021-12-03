@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaTimesCircle } from "react-icons/fa";
 import axios from "axios";
-import "./Create.css";
 import { ADDRESS } from "../Context";
 
 const Create = () => {
@@ -10,7 +9,6 @@ const Create = () => {
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
 	const [number, setNumber] = useState("");
-	const [verify, setVerify] = useState("");
 	const [button, setButton] = useState({ disabled: true, click: false });
 	const [message, setMessage] = useState();
 
@@ -18,7 +16,6 @@ const Create = () => {
 	const [classUsername, setClassUsername] = useState("");
 	const [classPassword, setClassPassword] = useState("");
 	const [classNumber, setClassNumber] = useState("");
-	const [verifyModal, setVerifyModal] = useState("none");
 
 	useEffect(() => {
 		const token = window.localStorage.getItem("access_token");
@@ -128,25 +125,14 @@ const Create = () => {
 			) {
 				setButton({ disabled: false });
 				if (button.click) {
-					setVerifyModal("verify_modal");
 					const { data } = await axios.post(`${ADDRESS}/create`, {
-						username: username.trim(),
-						password: password.trim(),
-						number: number.trim(),
-						email: email.trim(),
-					});
-					setMessage(data.message);
-				}
-
-				if (verify.trim().length === 6) {
-					const { data } = await axios.post(`${ADDRESS}/create`, {
-						verify: verify.trim(),
 						username: username.trim(),
 						password: password.trim(),
 						number: number.trim(),
 						email: email.trim(),
 					});
 					if (data.data) {
+						setMessage(data.message);
 						window.localStorage.setItem(
 							"access_token",
 							data.access_token
@@ -169,18 +155,11 @@ const Create = () => {
 		password,
 		number,
 		email,
-		verify,
 	]);
 
 	function buttonClick(e) {
 		e.preventDefault();
 		return setButton({ disabled: true, click: true });
-	}
-
-	function deleteUser() {
-		setMessage("");
-		setVerifyModal("none");
-		setVerify("");
 	}
 
 	return (
@@ -259,29 +238,6 @@ const Create = () => {
 						Create
 					</button>
 				</form>
-			</div>
-			<div className={verifyModal}>
-				<div className="verify_content">
-					<form>
-						<span
-							onClick={(e) => deleteUser(e)}
-							className="exit exit_v"
-						>
-							<FaTimesCircle />
-						</span>
-						<h1>Verify code</h1>
-						<p className="your_email">
-							Your email <br />
-							{email}
-						</p>
-						<input
-							onKeyUp={(e) => setVerify(e.target.value)}
-							type="number"
-							placeholder="code..."
-						/>
-						<p className="message">{message}</p>
-					</form>
-				</div>
 			</div>
 		</>
 	);

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Filter.css";
 import { useFilter } from "../Context";
 import { ADDRESS } from "../Context";
 import { AiOutlineClose } from "react-icons/ai";

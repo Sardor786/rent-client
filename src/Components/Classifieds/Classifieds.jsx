@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Classifieds.css";
 import axios from "axios";
 import moment from "moment";
 import { Link } from "react-router-dom";

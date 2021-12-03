@@ -6,7 +6,6 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { ADDRESS } from "../Context";
-import "./Settings.css";
 
 const Settings = () => {
 	const [user, setUser] = useState({});

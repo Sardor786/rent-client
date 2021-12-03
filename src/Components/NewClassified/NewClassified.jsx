@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./NewClassified.css";
 import axios from "axios";
 import { FaTrashAlt } from "react-icons/fa";
 import { BsUpload } from "react-icons/bs";

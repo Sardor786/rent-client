@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Account.css";
 import axios from "axios";
 import moment from "moment";
 import { Link } from "react-router-dom";

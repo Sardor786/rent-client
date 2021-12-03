@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./App.css";
 import Header from "./Components/Header/Header";
 import Filter from "./Components/Filter/Filter";
 import Menu from "./Components/Menu/Menu";
