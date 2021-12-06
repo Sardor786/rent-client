@@ -1,29 +1,3 @@
-.header {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	margin: 0;
-	padding: 20px;
-	font-style: italic;
-	color: snow;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	background: #1c8adb;
-	z-index: 9999;
-	font-family: "Billabong", "Arial", sans-serif;
-	letter-spacing: 7px;
-}
-
-.title {
-	margin: 0;
-	flex-grow: 1;
-	text-align: center;
-	font-style: normal;
-	font-style: italic;
-}
-
 .exitAccount,
 .new,
 .setting {
@@ -510,9 +484,6 @@ input {
 }
 
 @media (max-width: 900px) {
-	.header {
-		padding: 20px 10px;
-	}
 	.title {
 		text-align: left;
 		font-size: 25px;

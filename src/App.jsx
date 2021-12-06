@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
-import Header from "./Components/Header/Header";
-import Filter from "./Components/Filter/Filter";
-import Menu from "./Components/Menu/Menu";
-import Classifieds from "./Components/Classifieds/Classifieds";
-import NewClassified from "./Components/NewClassified/NewClassified";
-import Login from "./Components/Login/Login";
-import Create from "./Components/Create/Create";
-import Account from "./Components/Account/Account";
-import Settings from "./Components/Settings/Settings";
+import React, { lazy, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
+const Header = lazy(() => import("./Components/Header/Header"));
+const Menu = lazy(() => import("./Components/Menu/Menu"));
+const Login = lazy(() => import("./Components/Login/Login"));
+const Create = lazy(() => import("./Components/Create/Create"));
+const Account = lazy(() => import("./Components/Account/Account"));
+const Home = lazy(() => import("./Components/Home/Home"));
+const Settings = lazy(() => import("./Components/Settings/Settings"));
+const NewClassified = lazy(() =>
+	import("./Components/NewClassified/NewClassified")
+);
 
 function App() {
 	useEffect(() => {
@@ -18,15 +19,10 @@ function App() {
 	}, []);
 
 	return (
-		<>
+		<React.Suspense fallback={<>loading...</>}>
+			<Header />
 			<Switch>
-				<Route path="/home" exact>
-					<Header />
-					<Filter />
-					<Classifieds />
-					<Menu />
-				</Route>
-
+				<Route path="/home" component={Home} exact />
 				<Route path="/account" exact>
 					<Account />
 					<Menu />
@@ -49,7 +45,7 @@ function App() {
 					<Menu />
 				</Route>
 			</Switch>
-		</>
+		</React.Suspense>
 	);
 }
 
